@@ -1,7 +1,6 @@
-package tn.esprit._3cinfo.nomdulivrable.DAO.Entities;
+package tn.esprit_3infogl1.springbootfirst.DAO.Entities;
 
 import lombok.*;
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
@@ -21,7 +20,7 @@ public class Contrat implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
     @Column(name = "id")
-    private long idContrat;
+    private Long idContrat;
 
     @Temporal(TemporalType.DATE)
     private Date    dateDebutC;
@@ -37,11 +36,6 @@ public class Contrat implements Serializable {
     @Transient
     private float salaire;
 
-
-
-
-
-
-
-
+    @ManyToOne
+    Etudiant contrats_etudiants;
 }
